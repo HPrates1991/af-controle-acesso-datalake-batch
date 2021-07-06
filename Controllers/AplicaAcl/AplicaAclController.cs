@@ -17,9 +17,9 @@ namespace Controllers
             _aplicaAclService = aplicaAclService;
         }
 
-        [FunctionName("af_acl_prd")]
+        [FunctionName("ControleAcessoDatalakeBatch")]
         public async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "post", Route = "af_acl_prd")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "post", Route = "ControleAcessoDatalakeBatch")] HttpRequest req,
             ILogger log)
         {
             string resultado = await _aplicaAclService.CallBatchAcl();
